@@ -1,13 +1,18 @@
 const express = require('express');
 const {
-  getMessages,
+  getInbox,
   createMessage,
-  deleteMessage
+  deleteMessage,
+  getSentItems
 } = require('../controllers/messages');
 
 const router = express.Router();
 
-router.route('/').get(getMessages).post(createMessage);
+router.route('/inbox').get(getInbox);
+
+router.route('sent-items').get(getSentItems);
+
+router.route('/').post(createMessage);
 
 router.route('/:id').delete(deleteMessage);
 
