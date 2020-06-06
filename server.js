@@ -2,6 +2,7 @@ const dotenv = require('dotenv');
 const express = require('express');
 const morgan = require('morgan');
 const colors = require('colors');
+const cors = require('cors');
 const errorHandler = require('./middleware/error');
 const { protect } = require('./middleware/auth');
 
@@ -18,7 +19,8 @@ const users = require('./routes/users');
 
 const app = express();
 
-//Body parser
+app.use(cors());
+
 app.use(express.json());
 
 if (process.env.NODE_ENV === 'development') {

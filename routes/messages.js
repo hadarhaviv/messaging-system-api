@@ -8,11 +8,11 @@ const {
 
 const router = express.Router();
 
+router.route('/').post(createMessage);
+
 router.route('/inbox').get(getInbox);
 
-router.route('sent-items').get(getSentItems);
-
-router.route('/').post(createMessage);
+router.route('/sent-items').get(getSentItems);
 
 router.route('/:id').delete(deleteMessage);
 

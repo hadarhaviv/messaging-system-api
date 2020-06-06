@@ -24,10 +24,10 @@ const importData = async () => {
     const messages = [];
     const users = await User.find().select({ _id: 1 });
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 10; i++) {
       const email = {};
       email.subject = randomWords({ min: 1, max: 5, join: ' ' });
-      email.messageBody = randomWords({ min: 5, max: 50, join: ' ' });
+      email.body = randomWords({ min: 5, max: 50, join: ' ' });
       email.sender = users[getRandomInt(3)]._id;
       email.receiver = users[getRandomInt(3)]._id;
 

@@ -6,7 +6,7 @@ const messageSchema = new mongoose.Schema({
     required: [true, 'Please add a message subject'],
     maxlength: 100
   },
-  messageBody: {
+  body: {
     type: String,
     required: [true, 'Please add a message body']
   },
