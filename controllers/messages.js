@@ -20,6 +20,9 @@ exports.getSentItems = asyncHandler(async (req, res, next) => {
     .select({ __v: 0 })
     .populate(getPopulate('sender'))
     .populate(getPopulate('receiver'));
+  if (!messages.length) {
+    return res.status(204).json({ success: true, data: [] });
+  }
   return res.status(200).json({ success: true, data: messages });
 });
 
