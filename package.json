@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4",
-    "random-words": "^1.1.1"
+    "random-words": "^1.2.0"
   }
 }
